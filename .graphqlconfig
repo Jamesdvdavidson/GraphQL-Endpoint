@@ -1,0 +1,22 @@
+{
+  "name": "Open Referral UK GraphQL Test",
+  "schemaPath": "schema.graphql",
+  "extensions": {
+    "endpoints": {
+      "Local": {
+        "url": "http://localhost:4000/",
+        "headers": {
+          "user-agent": "JS GraphQL"
+        },
+        "introspect": true
+      },
+        "Live": {
+          "url": "https://davids44-graphql.herokuapp.com/",
+          "headers": {
+            "user-agent": "JS GraphQL"
+          },
+          "introspect": true
+        }
+    }
+  }
+}

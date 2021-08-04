@@ -1,0 +1,193 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+}
+
+type Query {
+    service(id: String!): service
+    services(page: Int, per_page: Int, where: Object): services_page
+    taxonomies(page: Int, parent_id: String, per_page: Int, vocabulary: String!): [taxonomy]
+    taxonomy(id: String!): taxonomy
+    vocabularies: [vocabulary]
+}
+
+type contacts {
+    id: String!
+    name: String
+    phones: [phones]
+    title: String
+}
+
+type cost_options {
+    amount: String
+    amount_description: String
+    id: String!
+    option: String
+    valid_from: String
+    valid_to: String
+}
+
+type eligibilitys {
+    eligibility: String
+    id: String!
+    maximum_age: Int
+    minimum_age: Int
+    taxonomys: [taxonomy]
+}
+
+type fundings {
+    id: String!
+    source: String
+}
+
+type holiday_schedules {
+    closed: String
+    closes_at: String
+    end_date: String
+    id: String!
+    opens_at: String
+    start_date: String
+}
+
+type languages {
+    id: String!
+    language: String
+}
+
+type location {
+    description: String
+    id: String!
+    latitude: Float
+    longitude: Float
+    name: String
+    physical_addresses: [physical_addresses]
+}
+
+type organization {
+    description: String!
+    email: String
+    id: String!
+    logo: String
+    name: String!
+    uri: String
+    url: String
+}
+
+type page {
+    first: Boolean
+    last: Boolean
+    number: Int
+    size: Int
+    totalElements: Int
+    totalPages: Int
+}
+
+type phones {
+    id: String!
+    number: String
+}
+
+type physical_addresses {
+    address_1: String
+    city: String
+    country: String
+    id: String!
+    postal_code: String
+    state_province: String
+}
+
+type regular_schedules {
+    byday: String
+    bymonthday: String
+    closes_at: String
+    description: String
+    dtstart: String
+    freq: String
+    id: String!
+    interval: String
+    opens_at: String
+    valid_from: String
+    valid_to: String
+}
+
+type reviews {
+    date: String
+    description: String
+    id: String!
+    organization: organization!
+    score: String
+    title: String
+    url: String
+    widget: String
+}
+
+type service {
+    accreditations: String
+    assured_date: String
+    attending_access: String
+    attending_type: String
+    contacts: [contacts]
+    cost_options: [cost_options]
+    deliverable_type: String
+    description: String
+    eligibilitys: [eligibilitys]
+    email: String
+    fees: String
+    fundings: [fundings]
+    holiday_schedules: [holiday_schedules]
+    id: String!
+    languages: [languages]
+    name: String!
+    organization: organization
+    regular_schedules: [regular_schedules]
+    reviews: [reviews]
+    service_areas: [service_areas]
+    service_at_locations: [service_at_locations]
+    service_taxonomys: [service_taxonomy]
+    status: String
+    url: String
+}
+
+type service_areas {
+    service_area: String!
+    uri: String
+}
+
+type service_at_locations {
+    id: String!
+    location: location
+    regular_schedule: [regular_schedules]
+}
+
+type service_taxonomy {
+    id: String!
+    taxonomy: taxonomy
+}
+
+type services_page {
+    page: page
+    services: [service]
+}
+
+type taxonomy {
+    id: String!
+    name: String
+    parent: taxonomy
+    vocabulary: String
+}
+
+type vocabulary {
+    name: String!
+}
+
+enum CacheControlScope {
+    PRIVATE
+    PUBLIC
+}
+
+
+scalar Object
+
+"The `Upload` scalar type represents a file upload."
+scalar Upload
